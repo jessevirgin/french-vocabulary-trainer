@@ -1,0 +1,658 @@
+/* Общие настройки шрифтов и сброс лишних отступов */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #334155;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Основной контейнер приложения */
+.app-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 720px;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(148, 163, 184, 0.15);
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #0f172a;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #475569;
+}
+
+/* СТИЛИ ДЛЯ ГОРИЗОНТАЛЬНОГО МЕНЮ РАЗДЕЛОВ */
+.category-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background-color: #f1f5f9;
+    padding: 6px;
+    border-radius: 14px;
+    margin-bottom: 4px;
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.category-btn:hover {
+    color: #334155;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.category-btn.active {
+    color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   КАСТОМНЫЙ ВЫПАДАЮЩИЙ СПИСОК (SELECT)
+   ========================================== */
+#module-options {
+    width: 100%;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    cursor: pointer;
+    outline: none;
+    
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+    padding-right: 45px;
+    
+    box-shadow: 0 2px 4px rgba(148, 163, 184, 0.05);
+    transition: all 0.2s ease;
+}
+
+/* Эффект при наведении */
+.custom-select:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* Эффект при клике (фокусе) */
+.custom-select:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Стилизация выпадающих пунктов */
+.custom-select option {
+    color: #334155;
+    font-weight: 500;
+    padding: 12px;
+    background-color: #ffffff;
+}
+
+/* Стилизация заголовков групп (Специальные режимы, Конкретные уроки) */
+.custom-select optgroup {
+    font-weight: 700;
+    color: #64748b;
+    background-color: #f8fafc;
+    padding: 8px 4px;
+}
+
+/* Гибкие сетки для кнопок настроек */
+.radio-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.module-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Базовый нейтральный стиль для всех интерактивных карточек */
+.radio-options label, .module-grid label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 16px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    color: #334155;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.radio-options label:hover, .module-grid label:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* Синяя подсветка для выбранных опций */
+.radio-options label.selected-card, 
+.module-grid label.selected-card {
+    border-color: #2563eb !important;
+    background-color: #eff6ff !important;
+    color: #2563eb !important;
+    font-weight: 600;
+}
+
+/* Главная синяя кнопка */
+.main-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.main-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* --- ИГРОВОЙ ЭКРАН --- */
+.game-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.quit-link-btn {
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 10px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Красивая и аккуратная подсветка при наведении */
+.quit-link-btn:hover {
+    background-color: #e2e8f0;
+    border-color: #cbd5e1;
+    color: #334155; 
+}
+
+#progress-text {
+    grid-column: 2;
+    text-align: center;
+    font-size: 14px;
+    color: #475569;
+}
+
+#score-text {
+    justify-self: end;
+    font-size: 14px;
+    color: #475569;
+    background-color: #f8fafc;
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #10b981;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Карточка текущего слова */
+.word-card {
+    background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+    padding: 45px 24px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid #dcfce7;
+}
+
+.word-card h2 {
+    color: #0f172a;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+/* Сетка вариантов ответа */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 500px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.option-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: #ffffff;
+    color: #334155;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.option-btn:hover:not([disabled]) {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Статусы правильных и неправильных ответов */
+.option-btn.correct, .input-success {
+    background-color: #dcfce7 !important;
+    border-color: #86efac !important;
+    color: #15803d !important;
+    font-weight: 600;
+}
+
+.option-btn.wrong, .input-error {
+    background-color: #fee2e2 !important;
+    border-color: #fca5a5 !important;
+    color: #b91c1c !important;
+    font-weight: 600;
+}
+
+/* Поле ручного ввода */
+.input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+#user-answer {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 16px;
+    background-color: #f8fafc;
+    text-align: center;
+}
+
+/* Базовый блок обратной связи (для режима ввода слов вручную) */
+.feedback-box {
+    padding: 20px 24px;
+    border-radius: 16px;
+    text-align: left;
+    margin-bottom: 25px;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* МИНИМАЛИСТИЧНЫЙ РЕЖИМ ДЛЯ ТЕСТОВ (Полный сброс лишнего визуала) */
+.feedback-box.minimal {
+    padding: 0;
+    margin-bottom: 20px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: center; /* Центрируем аккуратную строчку текста */
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+}
+.feedback-box.minimal.correct { color: #10b981; }
+.feedback-box.minimal.wrong { color: #4f46e5; }
+
+/* Элементы карточки (используются только при ручном вводе input) */
+.feedback-status {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.feedback-label { font-size: 13px; font-weight: 500; opacity: 0.8; margin-top: 2px; }
+.feedback-translation { font-size: 18px; font-weight: 700; line-height: 1.4; }
+.feedback-user-answer { font-size: 13px; font-weight: 500; margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(55, 48, 163, 0.12); }
+.feedback-user-answer span { font-weight: 600; text-decoration: line-through; opacity: 0.8; }
+
+/* Стандартные цвета карточек для режима ручного ввода */
+.feedback-box:not(.minimal).correct {
+    background-color: #f0fdf4;
+    border: 1px solid #e2fbe8;
+    border-left: 5px solid #10b981;
+    color: #14532d;
+}
+.feedback-box:not(.minimal).correct .feedback-status { color: #10b981; }
+
+.feedback-box:not(.minimal).wrong {
+    background-color: #f5f7ff;
+    border: 1px solid #e8ecff;
+    border-left: 5px solid #4f46e5;
+    color: #1e1b4b;
+}
+.feedback-box:not(.minimal).wrong .feedback-status { color: #4f46e5; }
+.feedback-box:not(.minimal).wrong .feedback-user-answer { color: #4338ca; }
+
+/* Результаты */
+.result-stats {
+    text-align: center;
+    margin: 35px 0;
+}
+
+.final-score {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 20px 0;
+    transition: color 0.3s ease;
+}
+
+#result-message {
+    font-size: 16px;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* Исправленный футер */
+/* Красивый и аккуратный футер */
+.app-footer {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    font-weight: 500;
+    line-height: 1.6;
+    width: 100%;
+}
+
+/* Выделение вашего имени фирменным синим цветом */
+.app-footer span, .app-footer a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.app-footer a:hover {
+    color: #1d4ed8;
+}
+/* ==========================================
+   НОВЫЕ СТИЛИ ДЛЯ ВЫПАДАЮЩЕГО СПИСКА
+   ========================================== */
+
+/* Контейнер кастомного селекта */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    user-select: none;
+}
+
+/* Главная кнопка-поле, на которую кликают */
+.dropdown-selected {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    cursor: pointer;
+    position: relative;
+    padding-right: 45px;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.dropdown-selected:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+/* Стрелочка справа через псевдоэлемент */
+.dropdown-selected::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 6px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease;
+}
+
+/* Переворот стрелочки при открытии */
+.custom-dropdown.open .dropdown-selected::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.custom-dropdown.open .dropdown-selected {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Всплывающее меню с закруглениями и тенью */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    max-height: 280px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(148, 163, 184, 0.18);
+    z-index: 100;
+    padding: 6px;
+}
+
+/* Заголовки категорий (Специальные режимы, Конкретные уроки) */
+/* Заголовки категорий внутри выпадающего списка */
+.dropdown-group-title {
+    font-size: 11px;           /* Сделаем шрифт чуть меньше */
+    font-weight: 750;           /* Сделаем его жирным */
+    color: #94a3b8;            /* Сделаем цвет чуть более приглушенным */
+    padding: 12px 12px 4px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: left;
+}
+
+/* Добавим тонкую разделительную линию перед второй категорией */
+.dropdown-group-title:not(:first-child) {
+    border-top: 1px solid #f1f5f9;
+    margin-top: 6px;
+    padding-top: 12px;
+}
+
+/* Сами пункты меню (уроки) */
+.dropdown-item {
+    padding: 10px 14px 10px 20px; /* Увеличим отступ слева до 20px для эффекта вложенности */
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: left;
+}
+.dropdown-item:hover:not(.selected) {
+    background-color: #f1f5f9; /* Спокойный, аккуратный светло-серый фон */
+    color: #0f172a;            /* Делаем текст чуть темнее и контрастнее */
+}
+/* Ищем и полностью скрываем карточку, внутри которой находится переключатель input */
+.radio-options label:has(input[value="input"]) {
+    display: none !important;
+}
+/* МЯГКИЙ ЭФФЕКТ НАВЕДЕНИЯ ДЛЯ ИНТЕРАКТИВНЫХ ПЛИТОК ЗАДАНИЙ И РЕЖИМОВ */
+.radio-options label:hover, 
+.module-grid label:hover {
+    background-color: #f1f5f9;
+    border-color: #3b82f6; /* Плавное окрашивание рамки в красивый синий цвет */
+    color: #1d4ed8;        /* Текст становится чуть ярче при наведении */
+    transform: translateY(-2px); /* Карточка аккуратно приподнимается на 2 пикселя вверх */
+    box-shadow: 0 6px 16px rgba(148, 163, 184, 0.12); /* Появляется мягкая тень */
+}
+
+/* СГЛАЖИВАНИЕ ЭФФЕКТОВ: добавляем плавный переход, чтобы карточки не дергались резко */
+.radio-options label, 
+.module-grid label {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* КРАСИВЫЙ ЭФФЕКТ ДЛЯ ВЕРХНИХ КНОПОК-ВКЛАДОК (Уроки, Глаголы, Темы) */
+.category-btn {
+    transition: all 0.2s ease !important;
+}
+
+.category-btn:hover:not(.active) {
+    color: #2563eb;
+    background-color: rgba(37, 99, 235, 0.06) !important;
+    transform: scale(1.02); /* Кнопка слегка увеличивается */
+}
+/* ПРИНУДИТЕЛЬНАЯ ПОДСВЕТКА ДЛЯ ЛЮБОГО ПУНКТА СПИСКА ПРИ НАВЕДЕНИИ МЫШИ */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f1f5f9 !important; /* Серый фон при наведении */
+    color: #0f172a !important;            /* Темный контрастный текст */
+}
+/* ИСПРАВЛЕНИЕ ЗАЛИПАНИЯ СИНЕЙ РАМКИ */
+#game-mode-options label:has(input[type="radio"]:checked),
+#mode-learn-label:has(input[type="radio"]:checked) {
+    border-color: #3b82f6 !important;
+    color: #1d4ed8 !important;
+    background-color: #ffffff !important;
+}
+
+/* ЕСЛИ РАДИО-КНОПКА НЕ ВЫБРАНА — ГАСИМ СИНЮЮ РАМКУ ДО СЕРОГО ЦВЕТА */
+#mode-learn-label:not(:has(input[type="radio"]:checked)) {
+    border-color: #e2e8f0 !important;
+    color: #475569 !important;
+}
+/* АВТОМАТИЧЕСКАЯ СИНЯЯ ПОДСВЕТКА ДЛЯ ЛЮБОЙ ВЫБРАННОЙ РАДИО-КАРТОЧКИ */
+.radio-options label:has(input[type="radio"]:checked),
+#game-mode-options label:has(input[type="radio"]:checked),
+#mode-learn-label:has(input[type="radio"]:checked) {
+    border-color: #3b82f6 !important;
+    color: #1d4ed8 !important;
+    background-color: #eff6ff !important; /* ВОЗВРАЩЕН: оригинальный мягкий синий фон */
+    box-shadow: none !important;
+}
+
+/* ЕСЛИ ВЫБРАН ДРУГОЙ РЕЖИМ — КНОПКА «ПРОСМОТР СЛОВ» СТАНОВИТСЯ ОФИЦИАЛЬНО НЕАКТИВНОЙ (СЕРОЙ) */
+body:has(input[name="game-mode"][value="quiz"]:checked) #mode-learn-label,
+body:has(input[name="game-mode"][value="gender"]:checked) #mode-learn-label {
+    border-color: #e2e8f0 !important;
+    color: #475569 !important;
+    background-color: #f8fafc !important; /* ИСПРАВЛЕНО: возвращен оригинальный неактивный серый фон */
+    box-shadow: none !important;
+}

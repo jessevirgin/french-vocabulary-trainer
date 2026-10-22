@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажер: Французский язык (Попова, Казакова)</title>
+    <!-- Подключение внешних стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- НАСТРОЙКИ: Стартовый экран приложения -->
+        <div id="screen-settings" class="screen">
+            <h1>Manuel de français</h1>
+            <p class="subtitle">Словарный тренажер по курсу Поповой, Казаковой, Ковальчук</p>
+
+        <div class="setting-group">
+            <label>Выберите раздел материала:</label>
+            
+<div class="setting-group">
+    
+    <!-- ВСТАВЬТЕ ЭТОТ БЛОК КНОПОК -->
+    <div class="category-menu">
+        <button type="button" class="category-btn active" data-cat="lessons">Уроки</button>
+        <button type="button" class="category-btn" data-cat="verbs">Глаголы</button>
+        <button type="button" class="category-btn" data-cat="themes">Темы</button>
+    </div>
+</div>
+
+<div class="setting-group">
+    <label>Выберите тему для повторения:</label>
+    <div id="module-options">
+        <!-- Наш новый кастомный выпадающий список -->
+        <div class="custom-dropdown" id="custom-dropdown">
+            <div class="dropdown-selected" id="dropdown-selected">Все слова из этого раздела</div>
+            <div class="dropdown-menu hidden" id="dropdown-menu"></div>
+        </div>
+    </div>
+</div>
+
+                <!-- 2. Выбор типа игрового задания -->
+                <div class="setting-group">
+                    <label>Тип задания:</label>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="game-mode" value="quiz" checked> 
+                            Выбор варианта
+                        </label>
+                        <label>
+                            <input type="radio" name="game-mode" value="input"> 
+                            Ввод вручную
+                        </label>
+                        <label>
+                            <input type="radio" name="game-mode" value="gender"> 
+                            Определение рода
+                        </label>
+<label id="mode-learn-label"><input type="radio" name="game-mode" value="learn">Просмотр слов</label>
+
+                    </div>
+                </div>
+
+                <!-- 3. Выбор направления перевода -->
+                <div class="setting-group" id="lang-mode-group">
+                    <label>Направление перевода:</label>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="lang-mode" value="fr-ru" checked> 
+                            FR ➔ RU
+                        </label>
+                        <label>
+                            <input type="radio" name="lang-mode" value="ru-fr"> 
+                            RU ➔ FR
+                        </label>
+                    </div>
+                </div>
+
+                <button id="start-btn" class="main-btn">Начать тренировку</button>
+            </div>
+        </div>
+
+        <!-- ИГРА: Экран с текущим раундом и вопросами -->
+        <div id="screen-game" class="screen hidden">
+            <div class="game-header">
+                <button id="quit-btn" class="quit-link-btn">← В меню</button>
+                <span id="progress-text">Вопрос 1 из 10</span>
+                <span id="score-text">Счет: 0</span>
+            </div>
+
+            <!-- Полоса прогресса (Progress Bar) -->
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+            
+            <!-- Поле, где показывается само слово или пропуск для рода -->
+            <div class="word-card">
+                <h2 id="target-word">Word</h2>
+            </div>
+
+            <!-- Контейнер для кнопок (режим "Выбор варианта" и режим "Определение рода") -->
+            <div id="quiz-options" class="options-grid">
+                <!-- Кнопки вариантов ответа или кнопки Le / La будут создаваться динамически -->
+            </div>
+
+            <!-- Контейнер для текстового поля (режим "Ввод вручную") -->
+            <div id="input-container" class="input-area hidden">
+                <input type="text" id="user-answer" placeholder="Введите ответ здесь..." autocomplete="off" autocapitalize="off">
+                <button id="submit-btn" class="main-btn">Проверить</button>
+            </div>
+
+            <!-- Блок обратной связи -->
+            <div id="feedback" class="feedback-box hidden"></div>
+            
+            <!-- Кнопка перехода дальше -->
+            <button id="next-btn" class="main-btn hidden">Дальше</button>
+        </div>
+        <!-- ЭКРАН ПРОСМОТРА И ИЗУЧЕНИЯ СЛОВ -->
+        <div id="screen-learn" class="hidden">
+            <div class="game-header">
+                <button id="quit-learn-btn" class="quit-link-btn">← В меню</button>
+                <span id="learn-title-text" style="grid-column: 2; text-align: center; font-weight: 600; color: #475569;">Изучение слов</span>
+            </div>
+            
+            <div id="learn-words-container" style="display: flex; flex-direction: column; gap: 12px; margin: 25px 0; max-height: 450px; overflow-y: auto; padding-right: 5px;">
+                <!-- Сюда JavaScript будет вставлять строчки со словами -->
+            </div>
+        </div>
+
+        <!-- ИТОГИ: Финальный экран результатов -->
+        <div id="screen-results" class="screen hidden">
+            <h2>Тренировка завершена!</h2>
+            <div class="result-stats">
+                <p>Ваш итоговый результат:</p>
+                <div class="final-score" id="final-score">0 / 0</div>
+                <p id="result-message">Отличный результат!</p>
+            </div>
+            <button id="restart-btn" class="main-btn">В главное меню</button>
+        </div>
+        <!-- ПОДВАЛ (FOOTER) -->
+            <div class="app-footer">
+                Специально для группы Елизаветы в Горьковской библиотеке<br>
+                <span><a href="https://github.com/jessevirgin" target="_blank">by Ilya</a></span>
+            </div>
+
+    </div>
+
+    <!-- Подключение логики приложения -->
+    <script src="app.js"></script>
+</body>
+</html>
