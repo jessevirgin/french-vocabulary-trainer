@@ -1461,7 +1461,7 @@ function renderModuleSelect() {
     // 2. Создаем заголовок для Конкретных тем
     const itemsTitle = document.createElement('div');
     itemsTitle.className = 'dropdown-group-title';
-    if (currentCategory === 'lessons') itemsTitle.textContent = "Уроки из учебника";
+    if (currentCategory === 'lessons') itemsTitle.textContent = "Уроки из учебника Поповой, Казаковой, Ковальчук";
     if (currentCategory === 'verbs') itemsTitle.textContent = "Спряжения глаголов";
     if (currentCategory === 'themes') itemsTitle.textContent = "Тематические подборки";
     dropdownMenu.appendChild(itemsTitle);
