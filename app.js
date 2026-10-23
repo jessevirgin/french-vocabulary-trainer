@@ -1329,6 +1329,22 @@ function initializeApp() {
     const modeInputs = document.querySelectorAll('input[name="game-mode"]');
     const langGroup = document.getElementById('lang-mode-group');
 
+    // ФУНКЦИЯ ДЛЯ СВЕРКИ И СКРЫТИЯ/ПОКАЗА БЛОКА НАПРАВЛЕНИЯ ПЕРЕВОДА
+    function toggleLangModeVisibility() {
+        if (!langGroup) return;
+        
+        // Находим активный тип задания
+        const checkedGameMode = document.querySelector('input[name="game-mode"]:checked');
+        
+        // Если выбран режим "gender" (Определение рода), скрываем плашку перевода
+        if (checkedGameMode && checkedGameMode.value === 'gender') {
+            langGroup.classList.add('hidden');
+        } else {
+            // Для остальных режимов (Тест / Просмотр слов) — показываем обратно
+            langGroup.classList.remove('hidden');
+        }
+    }
+
     // 1. Установка обработчиков на кнопки меню категорий («шапка сайта»)
     const catButtons = document.querySelectorAll('.category-btn');
     catButtons.forEach(btn => {
@@ -1366,7 +1382,6 @@ function initializeApp() {
                                 quizInput.checked = true;
                                 modeInputs.forEach(l => l.parentElement.classList.remove('selected-card'));
                                 quizInput.parentElement.classList.add('selected-card');
-                                if (langGroup) langGroup.classList.remove('hidden');
                             }
                         }
                     } else {
@@ -1374,6 +1389,9 @@ function initializeApp() {
                     }
                 }
             });
+
+            // Проверяем видимость направления перевода при смене категории
+            toggleLangModeVisibility();
         });
     });
 
@@ -1383,6 +1401,13 @@ function initializeApp() {
     // 3. Динамическая подсветка плиток "Тип задания" и "Направление"
     const gameModeLabels = document.querySelectorAll('#game-mode-options label');
     const learnLabel = document.getElementById('mode-learn-label');
+
+    modeInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            // Вызываем проверку скрытия блока перевода при любом изменении радиокнопок заданий
+            toggleLangModeVisibility();
+        });
+    });
 
     gameModeLabels.forEach(label => {
         label.addEventListener('click', () => {
@@ -1407,7 +1432,11 @@ function initializeApp() {
             
             // Сами прожимаем радио-кнопку внутри неё, чтобы JS понял режим
             const radioInside = learnLabel.querySelector('input[type="radio"]');
-            if (radioInside) radioInside.checked = true;
+            if (radioInside) {
+                radioInside.checked = true;
+                // Триггерим событие изменения, чтобы скрытие/показ отработали корректно
+                toggleLangModeVisibility();
+            }
         });
     }
 
@@ -1429,6 +1458,9 @@ function initializeApp() {
             dropdownMenu.classList.add('hidden');
         });
     }
+
+    // Первичная проверка при инициализации приложения (на случай, если по умолчанию выбран род)
+    toggleLangModeVisibility();
 }
 // ==========================================
 // ТЕХНИЧЕСКАЯ ЧАСТЬ: ВЫПАДАЮЩИЙ СПИСОК И СТАРТ (ЧАСТЬ 2)
