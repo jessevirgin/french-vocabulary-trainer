@@ -205,7 +205,7 @@ const vocabularyData = {
             { fr: "gris, grise", ru: "серый, -ая" },
             { fr: "les cheveux [le-`jø] m pl", ru: "волосы" },
             { fr: "frisé, frisée", ru: "вьющийся, -щаяся" },
-            { fr: "monsieur [mǝ-`sjø] m", ru: "господин, сударь", gender: "m", noun: "monsieur" },
+            { fr: "monsieur [mǝ-`sjø]", ru: "господин, сударь", gender: "m", noun: "monsieur" },
             { fr: "vieux, vieille", ru: "старый, -ая" },
             { fr: "il peut (pouvoir, 3e gr.)", ru: "он может" },
             { fr: "vivre (3e gr.)", ru: "жить" },
@@ -255,7 +255,7 @@ const vocabularyData = {
             { fr: "je regrette", ru: "сожалею, мне очень жаль" },
             { fr: "il n'est pas là", ru: "его нет" },
             { fr: "il sera là", ru: "он будет (sera — будущее время от глагола être)" },
-            { fr: "jeudi [ʒø-`di] m", ru: "четверг", gender: "m", noun: "jeudi" }
+            { fr: "jeudi [ʒø-`di]", ru: "четверг", gender: "m", noun: "jeudi" }
         ]
     },
     "lesson7": {
@@ -304,7 +304,7 @@ const vocabularyData = {
             { fr: "d'habitude", ru: "обыкновенно, обычно" },
             { fr: "d'habitute", ru: "обыкновенно, обычно" }, // Фиксация опечатки из рамки дословно
             { fr: "une habitude", ru: "привычка", gender: "f", noun: "habitude" },
-            { fr: "samedi m", ru: "1) суббота; 2) в субботу", gender: "m", noun: "samedi" },
+            { fr: "samedi", ru: "1) суббота; 2) в субботу", gender: "m", noun: "samedi" },
             { fr: "visiter", ru: "посещать, осматривать, ходить (по, в); совершать экскурсии (по, в)" },
             { fr: "le musée", ru: "музей", gender: "m", noun: "musée" },
 
@@ -335,7 +335,7 @@ const vocabularyData = {
             { fr: "une porte", ru: "дверь", gender: "f", noun: "porte" },
             { fr: "elle veut (vouloir, 3e gr.)", ru: "она хочет" },
             { fr: "je veux", ru: "я хочу" },
-            { fr: "l'homme m.", ru: "1) человек; 2) мужчина", gender: "m", noun: "homme" },
+            { fr: "l'homme", ru: "1) человек; 2) мужчина", gender: "m", noun: "homme" },
             { fr: "notre", ru: "притяжательное прилагательное наш, наша; свой, своя" },
             { fr: "le professeur", ru: "преподаватель", gender: "m", noun: "professeur" },
             { fr: "la géographie", ru: "география", gender: "f", noun: "géographie" },
@@ -426,7 +426,7 @@ const vocabularyData = {
             { fr: "il faut", ru: "надо" },
 
             // Слова к тексту
-            { fr: "l'opérateur m", ru: "оператор", gender: "m", noun: "opérateur" },
+            { fr: "l'opérateur", ru: "оператор", gender: "m", noun: "opérateur" },
             { fr: "aussi", ru: "наречие также, тоже" },
             { fr: "une dactylo", ru: "машинистка", gender: "f", noun: "dactylo" },
             { fr: "le bureau", ru: "1) письменный стол; 2) рабочий кабинет; 3) бюро, отдел, контора, канцелярия", gender: "m", noun: "bureau" },
@@ -453,7 +453,7 @@ const vocabularyData = {
 
             // Слова после диалога
             { fr: "quelque part", ru: "куда-нибудь, куда-то; где-нибудь, где-то" },
-            { fr: "l'après-midi m", ru: "время после полудня", gender: "m", noun: "après-midi" },
+            { fr: "l'après-midi", ru: "время после полудня", gender: "m", noun: "après-midi" },
             { fr: "cet après-midi", ru: "сегодня днем" },
             { fr: "nulle part", ru: "никуда; нигде" },
             { fr: "le supermarché", ru: "универсам, супермаркет", gender: "m", noun: "supermarché" },
@@ -477,7 +477,7 @@ const vocabularyData = {
             { fr: "la radio", ru: "радио", gender: "f", noun: "radio" },
             { fr: "apporter qch", ru: "приносить что-л." },
             { fr: "douze", ru: "двенадцать" },
-            { fr: "août [ut] m", ru: "август", gender: "m", noun: "août" },
+            { fr: "août [ut]", ru: "август", gender: "m", noun: "août" },
             { fr: "une équipe", ru: "команда", gender: "f", noun: "équipe" },
             { fr: "arriver", ru: "приходить, приезжать" },
             { fr: "trouver qch", ru: "находить что-л." },
@@ -495,7 +495,7 @@ const vocabularyData = {
             { fr: "rouge", ru: "красный, -ая" },
             { fr: "ou", ru: "союз или, либо" },
             { fr: "vert, -e", ru: "зеленый, -ая" },
-            { fr: "l'espagnol m", ru: "испанский язык", gender: "m", noun: "espagnol" },
+            { fr: "l'espagnol", ru: "испанский язык", gender: "m", noun: "espagnol" },
             { fr: "chaque", ru: "каждый, -ая" },
             { fr: "une ligne", ru: "строчка", gender: "f", noun: "ligne" },
 
@@ -507,7 +507,7 @@ const vocabularyData = {
             { fr: "de quelle couleur est ...?", ru: "какого цвета ...?" },
 
             // Слова к тексту
-            { fr: "l'ouvrier m", ru: "рабочий", gender: "m", noun: "ouvrier" },
+            { fr: "l'ouvrier", ru: "рабочий", gender: "m", noun: "ouvrier" },
             { fr: "surtout", ru: "наречие особенно, в особенности" },
             { fr: "le football [fut-`bɔl]", ru: "футбол", gender: "m", noun: "football" },
             { fr: "presque", ru: "наречие почти" },
@@ -538,7 +538,7 @@ const vocabularyData = {
             { fr: "la FNAC", ru: "ФНАК (название магазина)", gender: "f", noun: "FNAC" },
             { fr: "peut-être", ru: "быть может, возможно" },
             { fr: "le cadeau", ru: "подарок", gender: "m", noun: "cadeau" },
-            { fr: "Noël [nɔ-εl] m", ru: "Рождество", gender: "m", noun: "Noël" },
+            { fr: "Noël [nɔ-εl]", ru: "Рождество", gender: "m", noun: "Noël" },
             { fr: "ça, c'est sûr", ru: "это уж конечно" },
             { fr: "leur", ru: "им" }
         ]
@@ -643,20 +643,20 @@ const vocabularyData = {
         title: "Урок 12 (douzième)",
         words: [
             // Слова к фразам
-            { fr: "l'écrivain m", ru: "писатель", gender: "m", noun: "écrivain" },
+            { fr: "l'écrivain", ru: "писатель", gender: "m", noun: "écrivain" },
             { fr: "le peintre", ru: "художник", gender: "m", noun: "peintre" },
-            { fr: "l'ingénieur m", ru: "инженер", gender: "m", noun: "ingénieur" },
+            { fr: "l'ingénieur", ru: "инженер", gender: "m", noun: "ingénieur" },
             { fr: "la peinture", ru: "живопись", gender: "f", noun: "peinture" },
             { fr: "préféré, -е", ru: "любимый, -ая" },
-            { fr: "l'intérêt m", ru: "интерес", gender: "m", noun: "intérêt" },
+            { fr: "l'intérêt", ru: "интерес", gender: "m", noun: "intérêt" },
             { fr: "tous [tus]", ru: "местоимение все" },
             { fr: "s'intéresser à qch", ru: "интересоваться чем-л." },
-            { fr: "l'art m", ru: "искусство", gender: "m", noun: "art" },
+            { fr: "l'art", ru: "искусство", gender: "m", noun: "art" },
             { fr: "bien", ru: "наречие хорошо" },
             { fr: "appliqué, -е", ru: "прилежный, старательный, -ая" },
             { fr: "travailler", ru: "учиться, заниматься" },
             { fr: "il revient (revenir, 3e gr.)", ru: "он возвращается" },
-            { fr: "l'institut m", ru: "институт", gender: "m", noun: "institut" },
+            { fr: "l'institut", ru: "институт", gender: "m", noun: "institut" },
             { fr: "quatre", ru: "четыре" },
             { fr: "vingt", ru: "двадцать" },
             { fr: "il prévient (prévenir, 3e gr.)", ru: "он предупреждает" },
@@ -683,7 +683,7 @@ const vocabularyData = {
             { fr: "décrocher (le téléphone)", ru: "снять трубку" },
             { fr: "appeler (au téléphone)", ru: "звонить кому-л., вызывать, просить к телефону" },
             { fr: "elle l'appelle", ru: "она ему звонит" },
-            { fr: "mardi m", ru: "вторник", gender: "m", noun: "mardi" },
+            { fr: "mardi", ru: "вторник", gender: "m", noun: "mardi" },
             { fr: "demain", ru: "наречие завтра" },
             { fr: "après-demain", ru: "наречие послезавтра" },
             { fr: "quinze", ru: "пятнадцать" },
@@ -779,8 +779,8 @@ const vocabularyData = {
             { fr: "pêcher", ru: "ловить рыбу, рыбачить" },
             { fr: "bricoler", ru: "мастерить, заниматься поделками (дома)" },
             { fr: "le fils [lǝ-fis]", ru: "сын", gender: "m", noun: "fils" },
-            { fr: "lundi m", ru: "понедельник, в понедельник", gender: "m", noun: "lundi" },
-            { fr: "l'anniversaire m", ru: "день рождения", gender: "m", noun: "anniversaire" },
+            { fr: "lundi", ru: "понедельник, в понедельник", gender: "m", noun: "lundi" },
+            { fr: "l'anniversaire", ru: "день рождения", gender: "m", noun: "anniversaire" },
             { fr: "se réunir (2e gr., ils se réunissent)", ru: "собираться" },
             { fr: "un repas", ru: "еда, завтрак, обед, ужин, прием пищи", gender: "m", noun: "repas" },
             { fr: "offrir qch à qn (3e gr., il offre)", ru: "дарить что-л. кому-л." },
