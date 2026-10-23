@@ -1330,17 +1330,18 @@ function initializeApp() {
     const langGroup = document.getElementById('lang-mode-group');
 
     // ФУНКЦИЯ ДЛЯ СВЕРКИ И СКРЫТИЯ/ПОКАЗА БЛОКА НАПРАВЛЕНИЯ ПЕРЕВОДА
+    // ФУНКЦИЯ ДЛЯ СВЕРКИ И СКРЫТИЯ/ПОКАЗА БЛОКА НАПРАВЛЕНИЯ ПЕРЕВОДА
     function toggleLangModeVisibility() {
         if (!langGroup) return;
         
         // Находим активный тип задания
         const checkedGameMode = document.querySelector('input[name="game-mode"]:checked');
         
-        // Если выбран режим "gender" (Определение рода), скрываем плашку перевода
-        if (checkedGameMode && checkedGameMode.value === 'gender') {
+        // СКРЫВАЕМ ПЛАШКУ, если выбрано «Определение рода» (gender) ИЛИ «Режим чтения» (learn)
+        if (checkedGameMode && (checkedGameMode.value === 'gender' || checkedGameMode.value === 'learn')) {
             langGroup.classList.add('hidden');
         } else {
-            // Для остальных режимов (Тест / Просмотр слов) — показываем обратно
+            // Для остальных режимов (Тест «quiz») — показываем обратно
             langGroup.classList.remove('hidden');
         }
     }
@@ -1356,14 +1357,23 @@ function initializeApp() {
             renderModuleSelect(); // Мгновенно перерисовываем выпадающий список
 
             // Умное скрытие всего блока "Тип задания" для глаголов, чтобы не было пустой плашки
+            // Прячем только сами карточки заданий (Тест, Род, Чтение), оставляя плашку перевода доступной
             const gameModeInput = document.querySelector('input[name="game-mode"]');
             if (gameModeInput) {
                 const taskTypeGroup = gameModeInput.closest('.setting-group');
                 if (taskTypeGroup) {
                     if (currentCategory === 'verbs') {
-                        taskTypeGroup.classList.add('hidden');
+                        taskTypeGroup.classList.add('hidden'); // Скрываем блок типов заданий для глаголов
+                        
+                        // Если был выбран не quiz (например, learn или gender), сбрасываем на quiz
+                        const quizInput = Array.from(modeInputs).find(i => i.value === 'quiz');
+                        if (quizInput) {
+                            quizInput.checked = true;
+                            modeInputs.forEach(l => l.parentElement.classList.remove('selected-card'));
+                            quizInput.parentElement.classList.add('selected-card');
+                        }
                     } else {
-                        taskTypeGroup.classList.remove('hidden');
+                        taskTypeGroup.classList.remove('hidden'); // Показываем для уроков и тем
                     }
                 }
             }
@@ -1374,16 +1384,6 @@ function initializeApp() {
                     const genderCard = input.parentElement;
                     if (currentCategory === 'verbs') {
                         genderCard.classList.add('hidden'); // Прячем род
-                        
-                        // Если род был выбран в этот момент, сбрасываем на "Выбор варианта"
-                        if (input.checked) {
-                            const quizInput = Array.from(modeInputs).find(i => i.value === 'quiz');
-                            if (quizInput) {
-                                quizInput.checked = true;
-                                modeInputs.forEach(l => l.parentElement.classList.remove('selected-card'));
-                                quizInput.parentElement.classList.add('selected-card');
-                            }
-                        }
                     } else {
                         genderCard.classList.remove('hidden'); // Показываем для уроков и тем
                     }
@@ -1394,6 +1394,7 @@ function initializeApp() {
             toggleLangModeVisibility();
         });
     });
+
 
     // 2. Первичный вывод выпадающего списка уроков
     renderModuleSelect();
