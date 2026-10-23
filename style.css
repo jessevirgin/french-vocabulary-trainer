@@ -670,7 +670,6 @@ body:has(input[name="game-mode"][value="gender"]:checked) #mode-learn-label {
 }
 
 /* Адаптивность для мобильных устройств */
-/* Адаптивность для мобильных устройств */
 @media (max-width: 480px) {
     .radio-options,
     #lang-mode-group .radio-options,
@@ -679,9 +678,11 @@ body:has(input[name="game-mode"][value="gender"]:checked) #mode-learn-label {
         gap: 8px !important;
     }
     
-    /* Уменьшаем поле выбора темы на мобильных до 13px, чтобы оно не доминировало */
+    /* Уменьшаем реальное поле выбора темы на мобильных устройствах */
+    .custom-select,
     .dropdown-selected {
         font-size: 13px !important;
+        font-weight: 500 !important;
         padding: 12px 16px !important;
     }
 }
