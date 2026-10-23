@@ -496,10 +496,9 @@ label {
 .dropdown-selected {
     width: 100%;
     padding: 14px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #334155;
-    background-color: #f8fafc;
+    font-size: 15px;      /* Слегка уменьшаем размер (было 16px) */
+    font-weight: 500;     /* Делаем начертание тоньше и изящнее (было 600) */
+    color: #475569;       /* Делаем цвет текста чуть мягче (менее контрастным) */    background-color: #f8fafc;
     border: 2px solid #e2e8f0;
     border-radius: 14px;
     cursor: pointer;
