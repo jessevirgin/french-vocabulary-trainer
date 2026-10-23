@@ -268,8 +268,8 @@ const vocabularyData = {
             // Слова к фразам
             { fr: "tu", ru: "ты" },
             { fr: "étudier 1) учиться; 2) изучать", ru: "учиться; 2) изучать" },
-            { fr: "l'Université f", ru: "университет", gender: "f", noun: "Université" },
-            { fr: "une 1) неопределенный артикль жен. рода ед. числа; 2) числительное одна", ru: "1) неопределенный артикль жен. рода ед. числа; 2) числительное одна" },
+            { fr: "l'Université", ru: "университет", gender: "f", noun: "Université" },
+            { fr: "une", ru: "1) неопределенный артикль жен. рода ед. числа; 2) числительное одна" },
             { fr: "une rue", ru: "улица", gender: "f", noun: "rue" },
             { fr: "fumer", ru: "курить" },
             { fr: "une cigarette", ru: "сигарета", gender: "f", noun: "cigarette" },
