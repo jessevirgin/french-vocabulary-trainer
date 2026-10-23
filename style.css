@@ -174,7 +174,7 @@ label {
 /* Гибкие сетки для кнопок настроек */
 .radio-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: 1fr; /* Переключаем в одну колонку по умолчанию */
     gap: 12px;
 }
 
@@ -678,4 +678,9 @@ body:has(input[name="game-mode"][value="gender"]:checked) #mode-learn-label {
         grid-template-columns: 1fr !important;
         gap: 8px !important;
     }
+}
+
+/* Принудительно выстраиваем типы заданий в одну колонку на компьютерах */
+.setting-group:has(input[name="game-mode"]) .radio-options {
+    grid-template-columns: 1fr !important;
 }
