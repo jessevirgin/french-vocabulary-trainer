@@ -267,7 +267,7 @@ const vocabularyData = {
 
             // Слова к фразам
             { fr: "tu", ru: "ты" },
-            { fr: "étudier 1) учиться; 2) изучать", ru: "учиться; 2) изучать" },
+            { fr: "étudier", ru: "учиться; 2) изучать" },
             { fr: "l'Université", ru: "университет", gender: "f", noun: "Université" },
             { fr: "une", ru: "1) неопределенный артикль жен. рода ед. числа; 2) числительное одна" },
             { fr: "une rue", ru: "улица", gender: "f", noun: "rue" },
@@ -330,12 +330,12 @@ const vocabularyData = {
             // Слова к фразам
             { fr: "une pomme", ru: "яблоко", gender: "f", noun: "pomme" },
             { fr: "donner", ru: "давать что-л." },
-            { fr: "bonne 1) хорошая; 2) вкусная", ru: "1) хорошая; 2) вкусная" },
+            { fr: "bonne", ru: "1) хорошая; 2) вкусная" },
             { fr: "sonner", ru: "звонить" },
             { fr: "une porte", ru: "дверь", gender: "f", noun: "porte" },
             { fr: "elle veut (vouloir, 3e gr.)", ru: "она хочет" },
             { fr: "je veux", ru: "я хочу" },
-            { fr: "l'homme m 1) человек; 2) мужчина", ru: "1) человек; 2) мужчина", gender: "m", noun: "homme" },
+            { fr: "l'homme m.", ru: "1) человек; 2) мужчина", gender: "m", noun: "homme" },
             { fr: "notre", ru: "притяжательное прилагательное наш, наша; свой, своя" },
             { fr: "le professeur", ru: "преподаватель", gender: "m", noun: "professeur" },
             { fr: "la géographie", ru: "география", gender: "f", noun: "géographie" },
@@ -394,7 +394,7 @@ const vocabularyData = {
 
             // Слова к фразам
             { fr: "venez! (venir, 3e gr.)", ru: "идите!" },
-            { fr: "le tableau 1) доска; 2) картина", ru: "1) доска; 2) картина", gender: "m", noun: "tableau" },
+            { fr: "le tableau", ru: "1) доска; 2) картина", gender: "m", noun: "tableau" },
             { fr: "écrivez! (écrire, 3e gr.)", ru: "пишите!, напишите!" },
             { fr: "haut, -е", ru: "высокий, -ая" },
             { fr: "beau, belle", ru: "красивый, -ая; прекрасный, -ая" },
@@ -429,7 +429,7 @@ const vocabularyData = {
             { fr: "l'opérateur m", ru: "оператор", gender: "m", noun: "opérateur" },
             { fr: "aussi", ru: "наречие также, тоже" },
             { fr: "une dactylo", ru: "машинистка", gender: "f", noun: "dactylo" },
-            { fr: "le bureau 1) письменный стол; 2) рабочий кабинет; 3) бюро, отдел, контора, канцелярия", ru: "1) письменный стол; 2) рабочий кабинет; 3) бюро, отдел, контора, канцелярия", gender: "m", noun: "bureau" },
+            { fr: "le bureau", ru: "1) письменный стол; 2) рабочий кабинет; 3) бюро, отдел, контора, канцелярия", gender: "m", noun: "bureau" },
             { fr: "le ministère", ru: "министерство", gender: "m", noun: "ministère" },
             { fr: "le commerce", ru: "торговля", gender: "m", noun: "commerce" },
             { fr: "extérieur, -e", ru: "внешний, -яя" },
@@ -457,7 +457,7 @@ const vocabularyData = {
             { fr: "cet après-midi", ru: "сегодня днем" },
             { fr: "nulle part", ru: "никуда; нигде" },
             { fr: "le supermarché", ru: "универсам, супермаркет", gender: "m", noun: "supermarché" },
-            { fr: "garder 1) присматривать; 2) хранить, оставлять", ru: "1) присматривать; 2) хранить, оставлять" },
+            { fr: "garder", ru: "1) присматривать; 2) хранить, оставлять" },
             { fr: "d'accord разг.", ru: "хорошо, ладно" },
             { fr: "allumer зд.", ru: "включать" }
         ]
@@ -661,7 +661,7 @@ const vocabularyData = {
             { fr: "vingt", ru: "двадцать" },
             { fr: "il prévient (prévenir, 3e gr.)", ru: "он предупреждает" },
             { fr: "une visite", ru: "визит", gender: "f", noun: "visite" },
-            { fr: "elles viennent (venir, 3e gr.) 1) они идут; 2) они приходят", ru: "1) они идут; 2) они приходят" },
+            { fr: "elles viennent (venir, 3e gr.)", ru: "1) они идут; 2) они приходят" },
             { fr: "le magasin", ru: "магазин", gender: "m", noun: "magasin" },
 
             // Рамка (Выражения к фразам)
@@ -677,7 +677,7 @@ const vocabularyData = {
             { fr: "terminer qch", ru: "оканчивать что-л." },
             { fr: "devenir (3e gr.)", ru: "становиться" },
             { fr: "dès", ru: "предлог с, от; начиная с; уже" },
-            { fr: "le matin 1) утро; 2) утром", ru: "1) утро; 2) утром", gender: "m", noun: "matin" },
+            { fr: "le matin", ru: "1) утро; 2) утром", gender: "m", noun: "matin" },
             { fr: "premier, première", ru: "первый, -ая" },
             { fr: "l'examen m [lεg-za-`mε]", ru: "экзамен", gender: "m", noun: "examen" },
             { fr: "décrocher (le téléphone)", ru: "снять трубку" },
@@ -736,7 +736,7 @@ const vocabularyData = {
             { fr: "parfum", ru: "[духи]", gender: "m", noun: "parfum" },
 
             // Слова к фразам
-            { fr: "un 1) числительное один; 2) неопределенный артикль мужского рода ед. числа", ru: "1) числительное один; 2) неопределенный артикль мужского рода ед. числа" },
+            { fr: "un", ru: "1) числительное один; 2) неопределенный артикль мужского рода ед. числа" },
             { fr: "un chapeau", ru: "шляпа", gender: "m", noun: "chapeau" },
             { fr: "brun, brune", ru: "коричневый, -ая; темный, каштановый (о волосах)" },
             { fr: "il y a [i-lja]", ru: "есть, находится" },
@@ -750,9 +750,9 @@ const vocabularyData = {
             { fr: "vous voudriez", ru: "вам хотелось бы" },
             { fr: "le Louvre", ru: "Лувр", gender: "m", noun: "Louvre" },
             { fr: "tenir qch (3e gr.)", ru: "держать что-л." },
-            { fr: "la compagnie 1) общество; 2) компания", ru: "1) общество; 2) компания", gender: "f", noun: "compagnie" },
+            { fr: "la compagnie", ru: "1) общество; 2) компания", gender: "f", noun: "compagnie" },
             { fr: "le plaisir", ru: "удовольствие", gender: "m", noun: "plaisir" },
-            { fr: "un article 1) грам. артикль; 2) статья", ru: "1) грам. артикль; 2) статья", gender: "m", noun: "article" },
+            { fr: "un article", ru: "1) грам. артикль; 2) статья", gender: "m", noun: "article" },
             { fr: "quelqu'un, сокр. qn", ru: "неопределенное местоимение кто-то, кто-нибудь, кто-либо" },
 
             // Рамка (Конструкции к фразам)
