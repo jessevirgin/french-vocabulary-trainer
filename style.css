@@ -173,9 +173,9 @@ label {
 
 /* Гибкие сетки для кнопок настроек */
 .radio-options {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 10px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
 }
 
 .module-grid {
